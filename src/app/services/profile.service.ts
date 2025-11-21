@@ -11,6 +11,6 @@ export class ProfileService {
   constructor(private httpClient: HttpClient) { }
 
   getProfiles(): Observable<Profile[]> {
-    return this.httpClient.get<Profile[]>('https://localhost:7212/api/sephyprofile');
+    return this.httpClient.get<Profile[]>('sephyapp-ecakezfkdfhagqdd.canadacentral-01.azurewebsites.net/api/sephyprofile');
   }
 }

@@ -13,7 +13,7 @@ export class AuthService {
 
   login(credentials: LoginRequest): Observable<LoginResponse> {
     console.log('attempting login...');
-    return this.httpClient.post<LoginResponse>('https://localhost:7212/login', credentials)
+    return this.httpClient.post<LoginResponse>('sephyapp-ecakezfkdfhagqdd.canadacentral-01.azurewebsites.net/api/login', credentials)
     .pipe(map((response: LoginResponse) => {
       localStorage.setItem('accessToken', response.accessToken);
       document.cookie = `refreshToken=${response.refreshToken}`;
