@@ -2,5 +2,7 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/ff314312-4277-4a54-897d-8855452f9603/resourceGroups/sephy-client_group/providers/Microsoft.Web/sites/sephy-client",
+    "appService.deploySubpath": "dist/sephyapp.client"
 }
