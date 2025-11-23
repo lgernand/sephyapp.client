@@ -15,11 +15,17 @@ import { ProfileListComponent } from "../profile-list/profile-list.component";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  isRegistering = false;
+  buttonText = '';
+
+  constructor(private authService: AuthService) { 
+    this.setIsLoggingIn();
+  }
 
   credentials: LoginRequest = {
     email: '',
-    password: ''
+    password: '',
+    accountType: ''
   }
 
   ngOnInit(): void {
@@ -30,10 +36,36 @@ export class LoginComponent implements OnInit {
     return this.authService.isLoggedIn();
   }
 
+ setIsLoggingIn(): void {
+  this.isRegistering = false;
+  this.buttonText = 'Sign in'
+ } 
+
+  setIsRegistering(): void {
+    this.isRegistering = true;
+    this.buttonText = 'Sign up'
+  }
+
+  handleFormSubmit() {
+    if (this.isRegistering) {
+      this.register();
+    } else {
+      this.login()
+    }
+  }
+
   login() {
     return this.authService.login(this.credentials)
     .subscribe(() => {
       console.log('login successful');
+    });
+  }
+
+  register() {
+    return this.authService.register(this.credentials)
+    .subscribe(() => {
+      console.log('registration successful');
+      this.login();
     });
   }
 }
