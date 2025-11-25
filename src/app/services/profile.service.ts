@@ -11,15 +11,15 @@ export class ProfileService {
 
   constructor(private httpClient: HttpClient) { }
 
-  profile = {
-
-  }
-
   getProfile(): Observable<Profile> {
-    return this.httpClient.get<Profile>(`${environment.apiUrl}/api/sephyprofile`);
+    return this.httpClient.get<Profile>(`${environment.apiUrl}/api/sephyprofile`)
   }
 
-  updateProfile(): void {
-    this.httpClient.post(`${environment.apiUrl}/api/sephyprofile`, this.profile)
+  updateProfile(request: Profile): Observable<Profile> {
+    return this.httpClient.patch<Profile>(`${environment.apiUrl}/api/sephyprofile`, request)
+  }
+
+  createProfile(request: Profile): Observable<Profile> {
+    return this.httpClient.post<Profile>(`${environment.apiUrl}/api/sephyprofile`, request)
   }
 }
