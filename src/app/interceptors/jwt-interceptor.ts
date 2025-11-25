@@ -13,7 +13,7 @@ export class JwtInterceptor implements HttpInterceptor {
         if (isLoggedIn) {
             request = request.clone({
                 setHeaders: {
-                    Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
                 }
             });
         }

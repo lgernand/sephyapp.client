@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ProfileListComponent } from "../profile-list/profile-list.component";
+import { RoleService } from '../../services/role.service';
+import { AddRoleRequest } from '../../models/addRole-request';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, NgIf, ProfileListComponent],
+  imports: [FormsModule, NgIf, ProfileListComponent, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -17,15 +19,21 @@ export class LoginComponent implements OnInit {
 
   isRegistering = false;
   buttonText = '';
+  roles: String[] = []; 
 
-  constructor(private authService: AuthService) { 
+  constructor(private authService: AuthService, private roleService: RoleService) { 
     this.setIsLoggingIn();
+    this.getRoles();
   }
 
   credentials: LoginRequest = {
     email: '',
     password: '',
     accountType: ''
+  }
+
+  roleRequest: AddRoleRequest = {
+    RoleName: ''
   }
 
   ngOnInit(): void {
@@ -36,10 +44,10 @@ export class LoginComponent implements OnInit {
     return this.authService.isLoggedIn();
   }
 
- setIsLoggingIn(): void {
-  this.isRegistering = false;
-  this.buttonText = 'Sign in'
- } 
+  setIsLoggingIn(): void {
+    this.isRegistering = false;
+    this.buttonText = 'Sign in'
+  } 
 
   setIsRegistering(): void {
     this.isRegistering = true;
@@ -65,7 +73,23 @@ export class LoginComponent implements OnInit {
     return this.authService.register(this.credentials)
     .subscribe(() => {
       console.log('registration successful');
-      this.login();
+      this.authService.login(this.credentials).subscribe(() => {
+        this.addRole();
+      });
+    });
+  }
+
+  getRoles(): void {
+    this.roleService.getRoles().subscribe(response => {
+      this.roles = response;
+    })
+  }
+
+  addRole(): void {
+    this.roleRequest.RoleName = this.credentials.accountType
+
+    this.roleService.addUserToRole(this.roleRequest).subscribe(() => {
+      console.log('role added');
     });
   }
 }
