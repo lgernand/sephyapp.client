@@ -11,7 +11,15 @@ export class ProfileService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getProfiles(): Observable<Profile[]> {
-    return this.httpClient.get<Profile[]>(`${environment.apiUrl}/api/sephyprofile`);
+  profile = {
+
+  }
+
+  getProfile(): Observable<Profile> {
+    return this.httpClient.get<Profile>(`${environment.apiUrl}/api/sephyprofile`);
+  }
+
+  updateProfile(): void {
+    this.httpClient.post(`${environment.apiUrl}/api/sephyprofile`, this.profile)
   }
 }

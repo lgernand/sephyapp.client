@@ -7,11 +7,12 @@ import { CommonModule } from '@angular/common';
 import { ProfileListComponent } from "../profile-list/profile-list.component";
 import { RoleService } from '../../services/role.service';
 import { AddRoleRequest } from '../../models/addRole-request';
+import { UserProfileComponent } from "../user-profile/user-profile.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, NgIf, ProfileListComponent, CommonModule],
+  imports: [FormsModule, NgIf, ProfileListComponent, CommonModule, UserProfileComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
