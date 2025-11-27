@@ -5,6 +5,7 @@
             <p>{{this.profile.name}}</p>
             <p>{{this.profile.bio}}</p>
             <p>{{this.profile.zipCode}}</p>
+            <app-pet></app-pet>
         </div>
         <ng-template #profileCreate>
             <form (ngSubmit)="this.handleFormSubmit();">
@@ -37,4 +38,5 @@
             </form>
         </ng-template>
     </div>
+
 </div>

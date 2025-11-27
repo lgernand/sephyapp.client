@@ -12,8 +12,8 @@ export class PetService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPet(): Observable<Pet> {
-    return this.httpClient.get<Pet>(`${environment.apiUrl}/api/pet`)
+  getPets(): Observable<Pet[]> {
+    return this.httpClient.get<Pet[]>(`${environment.apiUrl}/api/pet`)
   }
 
   updateProfile(request: Pet): Observable<Pet> {

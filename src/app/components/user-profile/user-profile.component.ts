@@ -4,11 +4,12 @@ import { Profile } from '../../models/profile';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { PetComponent } from "./pet/pet.component";
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, PetComponent],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
