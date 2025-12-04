@@ -1,0 +1,25 @@
+<div *ngFor="let pet of this.pets">
+    <p>{{pet.name}}</p>
+</div>
+
+<div>
+    <form [formGroup]="addPetForm" (ngSubmit)="handleSubmit()">
+        <label for="name">Name: </label>
+        <input id="name" type="text" formControlName="name">
+        <label for="dateOfBirth">Date of birth</label>
+        <input id="dateOfBirth" type="date" formControlName="dateOfBirth">
+
+        <label for="gender">Gender</label>
+        <input id="gender" type="text" formControlName="gender">
+
+        <label for="species">Species</label>
+        <input id="species" type="text" formControlName="species">
+
+        <label for="breed">Breed</label>
+        <input id="breed" type="text" formControlName="breed">
+
+        <button type="submit" [disabled]="!addPetForm.valid">Submit</button>
+
+        <p>Form Status: {{ addPetForm.status }}</p>
+    </form>
+</div>

@@ -1,4 +1,4 @@
-<div *ngIf="!isLoggedIn(); else profileList">
+<div *ngIf="!isLoggedIn()">
 
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -32,7 +32,10 @@
         <div>
           <label for="account type" class="block text-sm/6 font-medium text-gray-900">Account Type</label>
           <div class="mt-2">
-            <input [(ngModel)]="credentials.accountType" id="accountType" type="accountType" name="accountType" required autocomplete="accountType" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+            <select [(ngModel)]="credentials.accountType" name="accountType" required autocomplete="accountType" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" >
+              <option value="" disabled selected>Select an option</option>
+              <option *ngFor="let role of this.roles" [value]="role">{{ role }}</option>
+            </select>
           </div>
         </div>
       </div>
@@ -58,7 +61,3 @@
 </div>
 
 </div>
-
-<ng-template #profileList>
-  <app-profile-list></app-profile-list>
-</ng-template>
