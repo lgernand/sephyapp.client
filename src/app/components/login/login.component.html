@@ -1,4 +1,4 @@
-<div *ngIf="!isLoggedIn(); else profileList">
+<div *ngIf="!isLoggedIn()">
 
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -61,7 +61,3 @@
 </div>
 
 </div>
-
-<ng-template #profileList>
-  <app-profile-list></app-profile-list>
-</ng-template>

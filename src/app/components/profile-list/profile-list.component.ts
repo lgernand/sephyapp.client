@@ -14,14 +14,14 @@ export class ProfileListComponent implements OnInit {
   constructor(private profileService: ProfileService) { }
   
   ngOnInit(): void {
-    this.loadProfiles();
+    //this.loadProfiles();
   }
 
   profiles: Profile[] = [];
 
-  loadProfiles(): void {
+  /*loadProfiles(): void {
     this.profileService.getProfiles().subscribe(response => {
       this.profiles = response;
     })
-  }
+  }*/
 }
