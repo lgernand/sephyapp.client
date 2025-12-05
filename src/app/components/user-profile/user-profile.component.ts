@@ -7,11 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { PetComponent } from "./pet/pet.component";
 
 @Component({
-  selector: 'app-user-profile',
-  standalone: true,
-  imports: [CommonModule, FormsModule, PetComponent],
-  templateUrl: './user-profile.component.html',
-  styleUrl: './user-profile.component.css'
+    selector: 'app-user-profile',
+    imports: [CommonModule, FormsModule, PetComponent],
+    templateUrl: './user-profile.component.html',
+    styleUrl: './user-profile.component.css'
 })
 export class UserProfileComponent implements OnInit {
   constructor(private profileService: ProfileService, public authService: AuthService) {

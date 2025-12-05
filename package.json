@@ -1,6 +1,20 @@
 {
   "name": "sephyapp.client",
   "version": "0.0.0",
+  "private": true,
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.",
+  "homepage": "https://github.com/lgernand/sephyapp.client#readme",
+  "bugs": {
+    "url": "https://github.com/lgernand/sephyapp.client/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgernand/sephyapp.client.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,28 +22,27 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
   "dependencies": {
-    "nodejs": "^24.0.0",
-    "@angular/animations": "^18.2.0",
-    "@angular/common": "^18.2.0",
-    "@angular/compiler": "^18.2.0",
-    "@angular/core": "^18.2.0",
-    "@angular/forms": "^18.2.0",
-    "@angular/platform-browser": "^18.2.0",
-    "@angular/platform-browser-dynamic": "^18.2.0",
-    "@angular/router": "^18.2.0",
+    "node": "22.12",
+    "@angular/animations": "^20.3.15",
+    "@angular/common": "^20.3.15",
+    "@angular/compiler": "^20.3.15",
+    "@angular/core": "^20.3.15",
+    "@angular/forms": "^20.3.15",
+    "@angular/platform-browser": "^20.3.15",
+    "@angular/platform-browser-dynamic": "^20.3.15",
+    "@angular/router": "^20.3.15",
     "@tailwindcss/postcss": "^4.1.17",
     "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
-    "tailwindcss": "^4.1.17",
+    "tailwindcss": "^2.0.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.10"
+    "zone.js": "~0.15.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.2.7",
-    "@angular/cli": "^18.2.7",
-    "@angular/compiler-cli": "^18.2.0",
+    "@angular/build": "^20.3.13",
+    "@angular/cli": "^20.3.13",
+    "@angular/compiler-cli": "^20.3.15",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
@@ -37,6 +50,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.5.2"
+    "postcss": "^8.5.3",
+    "typescript": "~5.9.3"
   }
 }

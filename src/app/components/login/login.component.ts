@@ -10,11 +10,10 @@ import { AddRoleRequest } from '../../models/addRole-request';
 import { UserProfileComponent } from "../user-profile/user-profile.component";
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [FormsModule, NgIf, ProfileListComponent, CommonModule, UserProfileComponent],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+    selector: 'app-login',
+    imports: [FormsModule, NgIf, ProfileListComponent, CommonModule, UserProfileComponent],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
 
