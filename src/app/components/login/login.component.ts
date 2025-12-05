@@ -4,14 +4,12 @@ import { LoginRequest } from '../../models/login-request';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { CommonModule } from '@angular/common';
-import { ProfileListComponent } from "../profile-list/profile-list.component";
 import { RoleService } from '../../services/role.service';
 import { AddRoleRequest } from '../../models/addRole-request';
-import { UserProfileComponent } from "../user-profile/user-profile.component";
 
 @Component({
     selector: 'app-login',
-    imports: [FormsModule, NgIf, ProfileListComponent, CommonModule, UserProfileComponent],
+    imports: [FormsModule, NgIf, CommonModule],
     templateUrl: './login.component.html',
     styleUrl: './login.component.css'
 })
