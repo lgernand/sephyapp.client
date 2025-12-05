@@ -1,13 +1,15 @@
-import { Component, inject, Inject, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, Inject, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Pet } from '../../../models/pet';
 import { PetService } from '../../../services/pet.service';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
     selector: 'app-pet',
-    imports: [CommonModule, ReactiveFormsModule],
+    imports: [CommonModule, ReactiveFormsModule, MatCardModule, MatButtonModule],
     templateUrl: './pet.component.html',
     styleUrl: './pet.component.css'
 })
