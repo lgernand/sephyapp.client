@@ -4,11 +4,10 @@ import { ProfileService } from '../../services/profile.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-profile-list',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './profile-list.component.html',
-  styleUrl: './profile-list.component.css'
+    selector: 'app-profile-list',
+    imports: [CommonModule],
+    templateUrl: './profile-list.component.html',
+    styleUrl: './profile-list.component.css'
 })
 export class ProfileListComponent implements OnInit {
   constructor(private profileService: ProfileService) { }

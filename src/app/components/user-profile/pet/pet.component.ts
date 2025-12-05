@@ -6,11 +6,10 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-pet',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './pet.component.html',
-  styleUrl: './pet.component.css'
+    selector: 'app-pet',
+    imports: [CommonModule, ReactiveFormsModule],
+    templateUrl: './pet.component.html',
+    styleUrl: './pet.component.css'
 })
 export class PetComponent implements OnInit {
   private formBuilder = inject(FormBuilder);

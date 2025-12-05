@@ -8,11 +8,10 @@ import { UserProfileComponent } from "./components/user-profile/user-profile.com
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [ReactiveFormsModule, LoginComponent, UserHeaderComponent, UserProfileComponent, CommonModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [ReactiveFormsModule, LoginComponent, UserHeaderComponent, UserProfileComponent, CommonModule],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   http = inject(HttpClient);
