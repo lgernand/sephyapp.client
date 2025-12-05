@@ -38,6 +38,7 @@ export class PetComponent implements OnInit {
   handleSubmit(): void {
     console.warn('submitting ' + this.addPetForm.value.name)
     let newPet: Pet = this.addPetForm.value as Pet;
+    newPet.id = '';
 
     this.petService.createProfile(newPet).subscribe(() => {
       this.petService.getPets().subscribe(response => {
