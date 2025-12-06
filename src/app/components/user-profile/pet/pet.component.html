@@ -5,10 +5,10 @@
         <mat-card-title>{{pet.name}}</mat-card-title>
         <mat-card-subtitle>{{pet.breed}}</mat-card-subtitle>
     </mat-card-header>
-    <div *ngIf="pet.species === 'dog'">
+    <div *ngIf="pet.species.toLowerCase() === 'dog'">
         <img mat-card-image src="https://silhouettegarden.com/files/images/dog-head-silhouette.png" alt="Photo of a dog">
     </div>
-    <div *ngIf="pet.species === 'cat'">
+    <div *ngIf="pet.species.toLowerCase() === 'cat'">
         <img mat-card-image src="https://t3.ftcdn.net/jpg/16/40/77/70/240_F_1640777081_Pf8RjIfcewCw2z1KN3gqI4w7DIF9kPuV.jpg" alt="Photo of a cat">
     </div>
     <mat-card-content>
