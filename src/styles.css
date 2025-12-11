@@ -1,1 +1,15 @@
-@import "tailwindcss";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.form-card {
+    max-width: 400px;
+}
+
+mat-form-field {  
+    margin: 0 auto;
+    width: 95%;
+}
+mat-card-header {
+    text-align: center;
+    justify-content: center;
+}
