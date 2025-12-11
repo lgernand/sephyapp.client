@@ -5,7 +5,14 @@
             <p>{{this.profile.name}}</p>
             <p>{{this.profile.bio}}</p>
             <p>{{this.profile.zipCode}}</p>
-            <app-pet></app-pet>
+
+            @if (this.profile.role === 'Pet Parent') {
+                <app-pet></app-pet>
+            }
+
+            @if (this.profile.role === 'Pet Groomer') {
+                <app-profile-tag></app-profile-tag>
+            }
         </div>
         
         <ng-template #profileCreate>

@@ -9,10 +9,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCard, MatCardHeader, MatCardTitle } from "@angular/material/card";
 import { MatButtonModule } from '@angular/material/button';
+import { ProfileTagComponent } from "../profile-tag/profile-tag.component";
 
 @Component({
     selector: 'app-user-profile',
-    imports: [CommonModule, MatButtonModule,FormsModule, PetComponent, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatCard, MatCardHeader, MatCardTitle],
+    imports: [CommonModule, MatButtonModule, FormsModule, PetComponent, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatCard, MatCardHeader, MatCardTitle, ProfileTagComponent],
     templateUrl: './user-profile.component.html',
     styleUrl: './user-profile.component.css'
 })
@@ -46,7 +47,9 @@ export class UserProfileComponent implements OnInit {
   }
 
   handleFormSubmit() {
-    this.profileService.createProfile(this.profile).subscribe(response => {
+    let newProfile = this.profileForm.value as Profile;
+
+    this.profileService.createProfile(newProfile).subscribe(response => {
       this.profile = response;
     });
   }
