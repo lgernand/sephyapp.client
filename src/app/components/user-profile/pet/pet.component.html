@@ -1,24 +1,24 @@
-<div *ngFor="let pet of this.pets">
-    <mat-card class="example-card" appearance="outlined">
-    <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{pet.name}}</mat-card-title>
-        <mat-card-subtitle>{{pet.breed}}</mat-card-subtitle>
-    </mat-card-header>
-    <div *ngIf="pet.species.toLowerCase() === 'dog'">
-        <img mat-card-image src="https://silhouettegarden.com/files/images/dog-head-silhouette.png" alt="Photo of a dog">
-    </div>
-    <div *ngIf="pet.species.toLowerCase() === 'cat'">
-        <img mat-card-image src="https://t3.ftcdn.net/jpg/16/40/77/70/240_F_1640777081_Pf8RjIfcewCw2z1KN3gqI4w7DIF9kPuV.jpg" alt="Photo of a cat">
-    </div>
-    <mat-card-content>
-        <p>
-        </p>
-    </mat-card-content>
-    <mat-card-actions>
-        <button matButton>Edit</button>
-        <button matButton>Make an appointment</button>
-    </mat-card-actions>
+<div *ngFor="let pet of this.pets" styel="display:flex">
+    <mat-card class="example-card" appearance="outlined" style="flex: 1 1 auto">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{pet.name}}</mat-card-title>
+            <mat-card-subtitle>{{pet.breed}}</mat-card-subtitle>
+        </mat-card-header>
+        <div *ngIf="pet.species.toLowerCase() === 'dog'">
+            <img mat-card-image src="https://silhouettegarden.com/files/images/dog-head-silhouette.png" alt="Photo of a dog">
+        </div>
+        <div *ngIf="pet.species.toLowerCase() === 'cat'">
+            <img mat-card-image src="https://t3.ftcdn.net/jpg/16/40/77/70/240_F_1640777081_Pf8RjIfcewCw2z1KN3gqI4w7DIF9kPuV.jpg" alt="Photo of a cat">
+        </div>
+        <mat-card-content>
+            <p>
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button matButton>Edit</button>
+            <button matButton>Make an appointment</button>
+        </mat-card-actions>
     </mat-card>
 </div>
 
