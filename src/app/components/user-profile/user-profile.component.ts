@@ -33,7 +33,8 @@ export class UserProfileComponent implements OnInit {
     id: '',
     name: '',
     bio: '',
-    zipCode: ''
+    zipCode: '',
+    role: ''
   }
 
   ngOnInit() {

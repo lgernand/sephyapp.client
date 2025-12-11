@@ -3,4 +3,5 @@ export interface Profile {
     name: string;
     bio: string;
     zipCode: string;
+    role: string;
 }
